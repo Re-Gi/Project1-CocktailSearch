@@ -1,66 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-    <body>
-        <section class="hero is-link">
-            <div class="hero-body" >
-              <p class="title">
-                Cocktails Drinks!
-              </p>
-              <p class="subtitle">
-                Link subtitle
-              </p>
-            </div>
-          </section>
+<body>
+    <section class="hero is-link">
+        <div class="hero-body" id="header">
+            <h1 class="title">
+                Cocktail Drink Site!
+            </h1>
+            <h2 class="subtitle">
+                Find Your Cocktail Desire ;)
+            </h2>
+        </div>
+    </section>
 
-          <div class="dropdown">
-            <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                <span>Alcohol</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-              <div class="dropdown-content">
-                <a href="#" class="dropdown-item">
-                  Overview
-                </a>
-                <a href="#" class="dropdown-item">
-                  Modifiers
-                </a>
-                <a href="#" class="dropdown-item">
-                  Grid
-                </a>
-                <a href="#" class="dropdown-item">
-                  Form
-                </a>
-                <a href="#" class="dropdown-item">
-                  Elements
-                </a>
-                <a href="#" class="dropdown-item">
-                  Components
-                </a>
-                <a href="#" class="dropdown-item">
-                  Layout
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                  More
-                </a>
-              </div>
-            </div>
-          </div>
-        <script src="./assets/js/script.js"></script>
-    </body>
+    <div class="container" id="container">
+        <div class="notification is-primary">
+            Please Enter Your Search Preferences Based On Alcohol, Ingredients, or Drink Name ;)
+        </div>
+
+        <form id="search-form" class="form">
+            <div class="col-16 col-sm-6"></div>
+            <input id="search-input" class="form-input" type="text" placeholder="Search!">
+            <div class="select is-link" id="drop-down"></div>
+                <select>
+                    <option>Select dropdown</option>
+                    <option>Alcohol</option>
+                    <option>Non-Alcohol</option>
+                </select>
+                <button class="button is-primary" id="search">Submit</button>
+        </form>
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Group 3</strong> Rebecca Girndt, Bennett Stokes, Jose Puente, and Chris Zavala
+            </p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
 
 </html>
