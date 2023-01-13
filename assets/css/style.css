@@ -1,6 +1,12 @@
 
 
 
+
+header {
+    height:200px;
+}
+
+
 #SFDButton{
     position: absolute;
   top: 10px;
@@ -27,8 +33,17 @@
 }
 
 
+
 .tile.is-ancestor {
     justify-content: center;
+
+#wide {
+    width: 80%;
+}
+
+.tile {
+    justify-content: space-around;
+
 }
 
 img {
