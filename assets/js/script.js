@@ -11,6 +11,7 @@ function handleSearchFormSubmit(event){
 
     if(!searchInputVal){
         console.log('no search term!');
+
         return;
     }
     searchCocktail(searchInputVal);
