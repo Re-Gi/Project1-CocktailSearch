@@ -10,7 +10,6 @@ function handleSearchFormSubmit(event){
     var searchInputVal = document.querySelector('#search-input').value;
     console.log(searchInputVal);
     var formatInputVal = document.querySelector('#drop-down').value;
-    console.log(formatInputVal);
 
     if(!searchInputVal){
         console.log('no search term!');
@@ -38,10 +37,14 @@ function getResults(searchInputVal, formatInputVal){
         throw response.json();
       }
 
-      console.log(response.json());
+      return response.json();
+    })
+    .then(function (locRes) {
+
+      console.log(locRes);
     })
 }
-    
+
 //     searchCocktail(searchInputVal);
 // }
 //     //This function is getting the DrinkName:
