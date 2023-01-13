@@ -16,7 +16,7 @@ function handleSearchFormSubmit(event){
     searchCocktail(searchInputVal);
 }
     //This function is getting the DrinkName:
-function searchCocktail(event){
+    function searchCocktail(event){
     event.preventDefault;
 
 
