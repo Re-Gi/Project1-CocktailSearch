@@ -19,45 +19,38 @@
 
         <main>
             <div class="tile is-ancestor">
-                <div class="tile is-vertical is-8">
+                <div class="tile is-vertical is-8" id="wide">
                   <div class="tile">
                     <div class="tile is-parent">
                         <article class="tile is-child">
-                            <img src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview">
+                            <img id="thumbnail" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview">
                         </article>
                       </div>
 
                     <div class="tile is-parent">
                       <article class="tile is-child">
                         <p class="title">Ingredients</p>
-                        <figure class="image is-4by3">
-                          <img src="https://bulma.io/images/placeholders/640x480.png">
-                        </figure>
+                        <ol id="ingredients">
+                          <li>one</li>
+                          <li>two</li>
+                          <li>three</li>
+                        </ol>
                       </article>
                     </div>
 
                     <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <div class="tile is-parent is-vertical">
-                                <article class="tile is-child notification is-primary">
-                                  <p class="title">Vertical...</p>
-                                  <p class="subtitle">Top tile</p>
-                                </article>
-                                <article class="tile is-child notification is-warning">
-                                  <p class="title">...tiles</p>
-                                  <p class="subtitle">Bottom tile</p>
-                                </article>
-                              </div>
+                        <article class="tile is-child">
+                            <p class="title" id="calories">Calories:</p>
+                            <p class="title" id="sugars">Sugars:</p>
                         </article>
                       </div>
                   </div>
 
                   <div class="tile is-parent">
-                    <article class="tile is-child notification is-danger">
-                      <p class="title">Wide tile</p>
-                      <p class="subtitle">Aligned with the right tile</p>
-                      <div class="content">
-                        <!-- Content -->
+                    <article class="tile is-child">
+                      <p class="title">Instructions</p>
+                      <div class="content" id="instructions">
+                        Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.
                       </div>
                     </article>
                   </div>
