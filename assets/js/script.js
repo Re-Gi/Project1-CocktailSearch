@@ -1,8 +1,12 @@
 // //Variable declarations: 
 var searchFormEl = document.querySelector('#search-form');
+var resultContentEl = document.querySelector('#result-content');
+var resultTextEl = document.querySelector('#result-text');
+//const apiKEY:'7048428';
 
 
-function handleSearchFormSubmit(event){
+
+function handleSearchFormSubmit(event) {
     event.preventDefault();
     var searchInputVal = document.querySelector('#search-input').value;
     console.log(searchInputVal);
@@ -11,7 +15,7 @@ function handleSearchFormSubmit(event){
     console.log(searchInputVal);
     var formatInputVal = document.querySelector('#drop-down').value;
 
-    if(!searchInputVal){
+    if (!searchInputVal) {
         console.log('no search term!');
 
         return;
@@ -20,30 +24,77 @@ function handleSearchFormSubmit(event){
     getResults(searchInputVal, formatInputVal);
 }
 
-function getResults(searchInputVal, formatInputVal){
+function getResults(searchInputVal, formatInputVal) {
     console.log(searchInputVal, formatInputVal);
     // var locQueryUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
-//   if (format) {
-//     locQueryUrl = 'https://www.loc.gov/' + format + '/?fo=json';
-//   }
+    //   if (format) {
+    //     locQueryUrl = 'https://www.loc.gov/' + format + '/?fo=json';
+    //   }
 
     var locQueryUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInputVal;
 
-  fetch(locQueryUrl)
-    .then(function (response) {
-      if (!response.ok) {
-        console.log('not ok');
-        throw response.json();
-      }
+    fetch(locQueryUrl)
+        .then(function (response) {
+            if (!response.ok) {
+                console.log('not ok');
+                throw response.json();
+            }
 
-      return response.json();
-    })
-    .then(function (locRes) {
+            return response.json();
+        })
+        .then(function (locRes) {
+            resultTextEl.textContent = locRes.search.searchInputVal;
+            console.log(locRes);
 
-      console.log(locRes);
-    })
+            if (!locRes.results.length){
+                console.log('No results found!');
+                resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+            } else {
+                resultContentEl.textContent = ' ';
+                for (var i =0; locRes.results.length; i++){
+
+                }
+            }
+
+        })
+        .catch(function(error){
+            // printResults(locRes.results[i]);
+            
+        });
 }
+
+function printResults(resultObj){
+    console.log(resultObj);
+
+    var resultCard = document.createElement('div');
+    resultCard.classList.add('card', "bg-light", 'text-dark', "mb-3", 'p-3');
+
+
+}
+
+
+//Event Listener
+document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //     searchCocktail(searchInputVal);
 // }
@@ -57,7 +108,7 @@ function getResults(searchInputVal, formatInputVal){
 //     var formatAlcoholicVal = document.querySelector('#drop-down');
 
 
-    
+
 //     let cocktailName = document.querySelector('.search-box');
 //     console.log(cocktailName);
 //     let drinkAPI = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`;
@@ -78,13 +129,11 @@ function getResults(searchInputVal, formatInputVal){
 //             officialName.innerText = `${name}`;
 //             cocktailPic.src = `${img}`;
 //             booleanAlcohol.innerText = `${containAlcohol}`;
-            
+
 
 //             // Need to find a location to show information at this point. 
 
 //         })
-    
 
 
-//Event Listener
-document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
+
