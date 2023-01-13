@@ -33,6 +33,7 @@ header {
 
 .tile.is-ancestor {
     justify-content: center;
+}
 
 #wide {
     width: 80%;

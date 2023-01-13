@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css" />
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-    <body>
+<body>
 
-      
-      <script src="./assets/js/script.js"></script>
+  <header>
+    <h1 id="DrinkName">Strawberry margarita</h1>
+    <button onclick="location.href = './index.html';" class="button" id="SFDButton">Search for Drinks</button>
+    <button class="button" id="STF">Saved to Favorites</button>
+    <p id="DRU">Drinks Я US</p>
+  </header>
 
-      <header>
-            <h1 id = "DrinkName">Strawberry margarita</h1>
-            <button onclick = "location.href = './index.html';" class="button" id = "SFDButton">Search for Drinks</button>
-           <button class="button" id = "STF">Saved to Favorites</button>
-            <p id = "DRU">Drinks Я US</p>
-      </header>
-        <main>
-            <div class="tile is-ancestor">
-                <div class="tile is-vertical is-8" id="wide">
-                  <div class="tile">
-                    <div class="tile is-parent">
-                        <article class="tile is-child">
-                            <img id="thumbnail" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview">
-                        </article>
-                      </div>
-
-                    <div class="tile is-parent">
-                      <article class="tile is-child">
-                        <p class="title">Ingredients</p>
-                        <ol id="ingredients">
-                          <li>one</li>
-                          <li>two</li>
-                          <li>three</li>
-                        </ol>
-                      </article>
-                    </div>
-
-                    <div class="tile is-parent">
-                        <article class="tile is-child">
-                            <p class="title" id="calories">Calories:</p>
-                            <p class="title" id="sugars">Sugars:</p>
-                        </article>
-                      </div>
-
-                  </div>
-              </div>
-
-
-              <div class="tile is-parent">
-                <article class="tile is-child notification is-danger">
-                  <p class="title">Wide tile</p>
-                  <p class="subtitle">Aligned with the right tile</p>
-                  <div class="content">
-                    <!-- Content -->
-
-                  <div class="tile is-parent">
-                    <article class="tile is-child">
-                      <p class="title">Instructions</p>
-                      <div class="content" id="instructions">
-                        Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.
-                      </div>
-                    </article>
-
-                  </div>
-                </article>
-              </div>
-
-            </div>
+  <main>
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-8" id="wide">
+        <div class="tile">
+          <div class="tile is-parent">
+            <article class="tile is-child">
+              <img id="thumbnail" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview">
+            </article>
           </div>
-    </main>
-    <script src="./assets/js/script.js"></script>
 
-        </main>
-        <script src="./assets/js/script.js"></script>
-    </body>
+          <div class="tile is-parent">
+            <article class="tile is-child">
+              <p class="title">Ingredients</p>
+              <ol id="ingredients">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child">
+              <p class="title" id="calories">Calories:</p>
+              <p class="title" id="sugars">Sugars:</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child">
+            <p class="title">Instructions</p>
+            <div class="content" id="instructions">
+              Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the
+              outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix
+              into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./assets/js/script.js"></script>
+
+</body>
 
 </html>
