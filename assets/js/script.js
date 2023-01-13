@@ -10,7 +10,7 @@ function handleSearchFormSubmit(event){
     var formatInputVal = document.querySelector('#drop-down');
 
     if(!searchInputVal){
-        
+
         return;
     }
     // var queryString = 'www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita' + searchInputVal + '&format=' + formatInputVal;
