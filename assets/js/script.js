@@ -40,19 +40,25 @@ function getResults(searchInputVal) {
                         resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
                     } else {
                         resultContentEl.textContent = ' ';
-                        for (var i =0; locRes.drinks.strDrink; i++){
-        
+                        for (var i =0; i < locRes.drinks.length; i++){
+                            var drinkname = document.createElement('p');
+                            drinkname.textContent = locRes.drinks[i].strDrink;
+                            document.getElementById('result-content').append(drinkname);
+
+                            var drinkpicture = document.createElement('img');
+                            drinkpicture.setAttribute("src", locRes.drinks[i].strDrinkThumb);
+                            document.getElementById('result-content').appendChild(drinkpicture);
                         }
                     }
         
 
-            var drinkname = document.createElement('p');
-            drinkname.textContent = locRes.drinks[0].strDrink;
-            document.getElementById('result-content').append(drinkname);
+            // var drinkname = document.createElement('p');
+            // drinkname.textContent = locRes.drinks[0].strDrink;
+            // document.getElementById('result-content').append(drinkname);
 
-            var drinkpicture = document.createElement('img');
-            drinkpicture.setAttribute("src", locRes.drinks[0].strDrinkThumb);
-            document.getElementById('result-content').appendChild(drinkpicture);
+            // var drinkpicture = document.createElement('img');
+            // drinkpicture.setAttribute("src", locRes.drinks[0].strDrinkThumb);
+            // document.getElementById('result-content').appendChild(drinkpicture);
             
         })
 
