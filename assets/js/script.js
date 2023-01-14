@@ -4,34 +4,23 @@ var resultContentEl = document.querySelector('#result-content');
 var resultTextEl = document.querySelector('#result-text');
 //const apiKEY:'7048428';
 
-
-
 function handleSearchFormSubmit(event) {
     event.preventDefault();
+    // if (!searchInputVal.value) {
+    //     console.log('no search term!');
+
+    //     return;
+    // }
     var searchInputVal = document.querySelector('#search-input').value;
-    console.log(searchInputVal);
+    // console.log(searchInputVal);
+    // var formatInputVal = document.querySelector('#drop-down').value;
 
-    var searchInputVal = document.querySelector('#search-input').value;
-    console.log(searchInputVal);
-    var formatInputVal = document.querySelector('#drop-down').value;
-
-    if (!searchInputVal) {
-        console.log('no search term!');
-
-        return;
-    }
-
-    getResults(searchInputVal, formatInputVal);
+    getResults(searchInputVal);
 }
 
-function getResults(searchInputVal, formatInputVal) {
-    console.log(searchInputVal, formatInputVal);
-    // var locQueryUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
-
-    //   if (format) {
-    //     locQueryUrl = 'https://www.loc.gov/' + format + '/?fo=json';
-    //   }
-
+function getResults(searchInputVal) {
+    console.log(searchInputVal);
+  
     var locQueryUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInputVal;
 
     fetch(locQueryUrl)
@@ -46,18 +35,43 @@ function getResults(searchInputVal, formatInputVal) {
         .then(function (locRes) {
             // resultTextEl.textContent = locRes.search.searchInputVal;
             console.log(locRes);
+            if (!locRes.drinks){
+                        console.log('No results found!');
+                        resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+                    } else {
+                        resultContentEl.textContent = ' ';
+                        for (var i =0; locRes.drinks.strDrink; i++){
         
-})
+                        }
+                    }
+        
+
+            var drinkname = document.createElement('p');
+            drinkname.textContent = locRes.drinks[0].strDrink;
+            document.getElementById('result-content').append(drinkname);
+
+            var drinkpicture = document.createElement('img');
+            drinkpicture.setAttribute("src", locRes.drinks[0].strDrinkThumb);
+            document.getElementById('result-content').appendChild(drinkpicture);
+            
+        })
+
+        
+        // })
+        // .catch(function(error){
+            // printResults(locRes[i]);
+             //console.log()
+        // });
 }
 
-function printResults(resultObj){
-    console.log(resultObj);
+// function printResults(resultObj){
+//     console.log(resultObj);
 
-    var resultCard = document.createElement('div');
-    resultCard.classList.add('card', "bg-light", 'text-dark', "mb-3", 'p-3');
+//     var resultCard = document.createElement('div');
+//     resultCard.classList.add('card', "bg-light", 'text-dark', "mb-3", 'p-3');
 
 
-}
+// }
 
 
 //Event Listener
