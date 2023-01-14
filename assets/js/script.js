@@ -44,24 +44,10 @@ function getResults(searchInputVal, formatInputVal) {
             return response.json();
         })
         .then(function (locRes) {
-            resultTextEl.textContent = locRes.search.searchInputVal;
+            // resultTextEl.textContent = locRes.search.searchInputVal;
             console.log(locRes);
-
-            if (!locRes.results.length){
-                console.log('No results found!');
-                resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
-            } else {
-                resultContentEl.textContent = ' ';
-                for (var i =0; locRes.results.length; i++){
-
-                }
-            }
-
-        })
-        .catch(function(error){
-            // printResults(locRes.results[i]);
-            
-        });
+        
+})
 }
 
 function printResults(resultObj){
@@ -134,6 +120,3 @@ document.querySelector('#search-form').addEventListener('submit', handleSearchFo
 //             // Need to find a location to show information at this point. 
 
 //         })
-
-
-
