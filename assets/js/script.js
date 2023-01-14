@@ -33,21 +33,15 @@ function getResults(searchInputVal) {
             return response.json();
         })
         .then(function (locRes) {
-            // resultTextEl.textContent = locRes.search.searchInputVal;
-            console.log(locRes);
+            resultTextEl.textContent = searchInputVal;
+            console.log(locRes.drinks);
             if (!locRes.drinks){
                         console.log('No results found!');
                         resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
                     } else {
                         resultContentEl.textContent = ' ';
                         for (var i =0; i < locRes.drinks.length; i++){
-                            var drinkname = document.createElement('p');
-                            drinkname.textContent = locRes.drinks[i].strDrink;
-                            document.getElementById('result-content').append(drinkname);
-
-                            var drinkpicture = document.createElement('img');
-                            drinkpicture.setAttribute("src", locRes.drinks[i].strDrinkThumb);
-                            document.getElementById('result-content').appendChild(drinkpicture);
+                            printResults(locRes.drinks[i]);
                         }
                     }
         
@@ -61,23 +55,25 @@ function getResults(searchInputVal) {
             // document.getElementById('result-content').appendChild(drinkpicture);
             
         })
-
-        
-        // })
-        // .catch(function(error){
-            // printResults(locRes[i]);
-             //console.log()
-        // });
 }
 
-// function printResults(resultObj){
-//     console.log(resultObj);
+function printResults(resultObj) {
 
-//     var resultCard = document.createElement('div');
-//     resultCard.classList.add('card', "bg-light", 'text-dark', "mb-3", 'p-3');
+    var resultCard = document.createElement('div');
+    resultCard.classList.add('card', "bg-light", 'text-dark', "mb-3", 'p-3');
+    document.getElementById('result-content').append(resultCard);
 
 
-// }
+    var drinkname = document.createElement('p');
+    drinkname.textContent = resultObj.strDrink;
+    resultCard.append(drinkname);
+
+    var drinkpicture = document.createElement('img');
+    drinkpicture.setAttribute("src", resultObj.strDrinkThumb);
+    resultCard.appendChild(drinkpicture);
+
+    
+}
 
 
 //Event Listener
