@@ -13,7 +13,11 @@ function handleSearchFormSubmit(event) {
     // }
     var searchInputVal = document.querySelector('#search-input').value;
     // console.log(searchInputVal);
-    // var formatInputVal = document.querySelector('#drop-down').value;
+
+    // var alcoholInputVal = document.querySelector('#drop-down').value;
+        // gives "alcoholic" or "non-alcoholic", make it a boolean? ex.
+            // var alcoholVal = true;
+            // if(alcoholInputVal !== "Alcohlic") { alcoholVal = false; }
 
     getResults(searchInputVal);
 }
@@ -72,9 +76,15 @@ function printResults(resultObj) {
     drinkpicture.setAttribute("src", resultObj.strDrinkThumb);
     resultCard.appendChild(drinkpicture);
 
-    
+    // what else do we wanna display on these cards?
+        // alcoholic/non-alcoholic
+
+    // add event listener to resultCard, click takes them to new event handling function with resultObj as parameter to be carried over    
 }
 
+// add new event handler function for result card
+ // use location.assign with '/future.html?q=' +resultObj.strDrink ?
+    //needs to get drink name of exact div clicked on, might need event.target somewhere
 
 //Event Listener
 document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
