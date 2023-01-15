@@ -14,16 +14,47 @@ function handleSearchFormSubmit(event) {
 
 function getResults(searchInputVal) {
     console.log(searchInputVal);
+    var URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='  + searchInputVal;
+//     const fetchDrinkNames = fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='  + searchInputVal);
+//     const fetchAlcoholType = fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal);
 
-    var URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInputVal;
+//     Promise.all([fetchDrinkNames, fetchAlcoholType])
+//         .then(values => {
+//         return Promise.all(values.map(r => r.json()));
+//     })  .then(([drinkname, alcoholtype]) =>{
+//         console.log(drinkname);
+//         console.log(alcoholtype);
+//         cocktailsData = data.drinks === null ? [] : data.drinks;
+//             printResults(cocktailsData);
+//             console.log(cocktailsData);
+//             checkError(cocktailsData);
+//     });
+// }
 
+    // let URLS = [
+    //     'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInputVal ,
+    //     'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal
+    // ]
+    
+//     let requests = URLS.map(URL => fetch(URL));
+//         Promise.all(requests)
+//         .then((responses) => responses.forEach(requests))
+//         .then((data) => {
+//             cocktailsData = data.drinks === null ? [] : data.drinks;
+//             printResults(cocktailsData);
+//             console.log(cocktailsData);
+//             checkError(cocktailsData);
+//         })
+
+       
+// }
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
             cocktailsData = data.drinks === null ? [] : data.drinks;
             printResults(cocktailsData);
             console.log(cocktailsData);
-
+            checkError(cocktailsData);
         });
 }    
 //need to get a way to print some search.
@@ -37,27 +68,23 @@ function printResults(cocktails) {
     }    
 }
 
-
-
-// const searchFormInput = document.querySelector("#search-form");
-// searchFormInput.addEventListener("submit", () =>{
-//     cocktailsData = [];
-//     getResults(URL + searchFormInput.value);
-//     checkError();
-// });
-
+//error handling event 
+//fixed the error function to show: "NO Search Found!"
+//Will try to come back to this later to put a better Error Message. But moving to other stuff
 function checkError(){
     setTimeout(() =>{
         if(cocktailsData.length === 0){
-        resultContentEl.innerHTML = `<div class=Error<h2>Error Not Found!</h2></div>`;
-        resultsContainer.innerHTML = "";
+            console.log("Hey please enter a searchable name");
+            resultContentEl.textContent = "No Search Found!"
+        // resultContentEl.innerHTML = `<div class="nothingFound"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${searchInputVal.value}"</strong></p></div>`;
+        // resultsContainer.innerHTML = "";
     } else {
         printResults(cocktailsData);
     }
 
-    }, 1000);
+    }, 500);
     resultContentEl.innerHTML = "";
-
+    
 }
 //this will open the drink item to the next page. 
 function clickResults() {
@@ -148,7 +175,3 @@ document.querySelector('#search-form').addEventListener('submit', handleSearchFo
 //         })
         
 // }
-
-
-
-
