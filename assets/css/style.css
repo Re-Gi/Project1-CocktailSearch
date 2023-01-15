@@ -51,4 +51,9 @@ img {
   background-color  : blue;
 } */
 
-
+/* first page stuff to see if I can get the results alignment better-Chris */
+/* just to put a grid on the results */
+.results-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
