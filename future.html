@@ -12,7 +12,7 @@
 <body>
 
   <header>
-    <h1 id="DrinkName">Strawberry margarita</h1>
+    <h1 id="DrinkName"></h1>
     <button onclick="location.href = './index.html';" class="button" id="SFDButton">Search for Drinks</button>
     <button class="button" id="STF">Saved to Favorites</button>
     <p id="DRU">Drinks Я US</p>
@@ -24,44 +24,38 @@
         <div class="tile">
           <div class="tile is-parent">
             <article class="tile is-child">
-              <img id="thumbnail" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview">
+              <img id="thumbnail">
             </article>
           </div>
 
           <div class="tile is-parent">
             <article class="tile is-child">
-              <p class="title">Ingredients</p>
-              <ol id="ingredients">
-                <li>one</li>
-                <li>two</li>
-                <li>three</li>
-              </ol>
+              <h2 class="title">Ingredients</h2>
+              <ul id="ingredients"></ul>
             </article>
           </div>
 
           <div class="tile is-parent">
             <article class="tile is-child">
-              <p class="title" id="calories">Calories:</p>
-              <p class="title" id="sugars">Sugars:</p>
+              <h2 class="title" id="nutrition-title">Calories:</h2>
+              <p id="calories-text" class="nutrition-text">123</p><br>
+              <h2 class="title" id="nutrition-title">Sugars:</h2>
+              <p id="sugars-text" class="nutrition-text">123</p><br>
             </article>
           </div>
         </div>
 
         <div class="tile is-parent">
           <article class="tile is-child">
-            <p class="title">Instructions</p>
-            <div class="content" id="instructions">
-              Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the
-              outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix
-              into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.
-            </div>
+            <h2 class="title">Instructions</h2>
+            <div class="content" id="instructions"></div>
           </article>
         </div>
       </div>
     </div>
   </main>
 
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/future.js"></script>
 
 </body>
 
