@@ -15,47 +15,25 @@ function handleSearchFormSubmit(event) {
 function getResults(searchInputVal) {
     console.log(searchInputVal);
     var URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='  + searchInputVal;
-//     const fetchDrinkNames = fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='  + searchInputVal);
-//     const fetchAlcoholType = fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal);
+    var URL2 = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal;
 
-//     Promise.all([fetchDrinkNames, fetchAlcoholType])
-//         .then(values => {
-//         return Promise.all(values.map(r => r.json()));
-//     })  .then(([drinkname, alcoholtype]) =>{
-//         console.log(drinkname);
-//         console.log(alcoholtype);
-//         cocktailsData = data.drinks === null ? [] : data.drinks;
-//             printResults(cocktailsData);
-//             console.log(cocktailsData);
-//             checkError(cocktailsData);
-//     });
-// }
+    let drinksname = fetch(URL);
+    let whattypeAlcohol = fetch(URL2);
 
-    // let URLS = [
-    //     'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInputVal ,
-    //     'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal
-    // ]
+    Promise.all([drinksname, whattypeAlcohol])
+    .then( files => {
+        files.forEach(files => {
+            process( files.json() )
+        })
+    })
     
-//     let requests = URLS.map(URL => fetch(URL));
-//         Promise.all(requests)
-//         .then((responses) => responses.forEach(requests))
-//         .then((data) => {
-//             cocktailsData = data.drinks === null ? [] : data.drinks;
-//             printResults(cocktailsData);
-//             console.log(cocktailsData);
-//             checkError(cocktailsData);
-//         })
-
-       
-// }
-    fetch(URL)
-        .then((response) => response.json())
-        .then((data) => {
-            cocktailsData = data.drinks === null ? [] : data.drinks;
+    let process = (prom) => {
+        prom.then(data =>{
+            cocktailsData = data.drinks === null ? []: data.drinks;
             printResults(cocktailsData);
-            console.log(cocktailsData);
             checkError(cocktailsData);
         });
+    }
 }    
 //need to get a way to print some search.
 //And also made the images clickable. 
@@ -76,7 +54,7 @@ function checkError(){
         if(cocktailsData.length === 0){
             console.log("Hey please enter a searchable name");
             resultContentEl.textContent = "No Search Found!"
-        // resultContentEl.innerHTML = `<div class="nothingFound"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${searchInputVal.value}"</strong></p></div>`;
+        // resultContentEl.innerHTML = `<div class="wrapper"><div class="col-12 col-md-9 p-3 text-light" id="results" ><div class="results-wrapper" id="result-content"><p>NO Search Found!</p></div></div></div>`;
         // resultsContainer.innerHTML = "";
     } else {
         printResults(cocktailsData);
@@ -100,78 +78,3 @@ function openDrink(element) {
 
 //Event Listener
 document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//         .then(function (response) {
-//             if (!response.ok) {
-//                 console.log('not ok');
-//                 throw response.json();
-//             }
-//             return response.json();
-//         })
-//         .then(function (data) {
-//             console.log(data);
-
-//             if (!data) {
-//                 console.log('No results found!');
-//                 resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
-//             } else {
-//                 resultContentEl.textContent = ' ';
-//                 for (var i = 0; data.drinks.strDrink; i++) {
-//                     printResults(lockRes[i].strDrink);
-//                 }
-//             }
-
-
-//             var drinkname = document.createElement('p');
-//             drinkname.textContent = data.drinks[i].strDrink;
-//             document.getElementById('result-content').append(drinkname);
-
-//             var drinkpicture = document.createElement('img');
-//             drinkpicture.setAttribute("src", data.drinks[i].strDrinkThumb);
-//             document.getElementById('result-content').appendChild(drinkpicture);
-
-//         })
-        
-// }
