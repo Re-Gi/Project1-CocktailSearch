@@ -1,6 +1,10 @@
 
-header {
+/* header {
   height:200px;
+} */
+main {
+  padding: 30px 10px;
+  font-size: 20px;
 }
 
 ul {
@@ -20,22 +24,27 @@ ul {
 }
 
 #SFDButton{
-  position: absolute;
-top: 10px;
-left:70px;
+  border: 1px dotted white;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
 }
+
+#SFDButton:hover {
+  border: none;
+}
+
 #DrinkName{
-  position:absolute;
-  right:0px;
-  left:0px;
-  top: 15px;
-  text-align: center;
+  font-size: 3rem;
+  margin-top: 20px;
 }
+
 #STF{
   position: absolute;
   top: 10px;
   right: 70px;
 }
+
 #DRU{
   position: absolute;
   top: 60px;
@@ -44,14 +53,8 @@ left:70px;
   text-align: center;
 }
 
-
-
 .tile.is-ancestor {
   justify-content: center;
-}
-
-#wide {
-  width: 80%;
 }
 
 .tile {
@@ -71,6 +74,12 @@ background-color  : blue;
 body {
   height: auto;
   margin: 0 auto;
+}
+
+.hero-body {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
 }
 
 .col-12 {
@@ -170,6 +179,11 @@ body {
 
 #martini glass{
   align-items: left;
+}
+
+#nutrition-tile {
+  width: fit-content;
+  flex-shrink: .5;
 }
 
 .footer{

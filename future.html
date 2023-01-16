@@ -11,16 +11,30 @@
 
 <body>
 
-  <header>
+  <header class="hero is-link">
+    <div class="hero-body" id="header">
+        <img src="./assets/martiniglass.png" alt="martini-glass" style="float: left; margin-right: 15px;">
+        <div>
+        <h1 class="title" id="title-hero">
+            Drinks Я Us 
+        </h1>
+        <h2 class="subtitle" id="DrinkName"></h2>
+        <button onclick="location.href = './index.html';" class="button" id="SFDButton">Return to Search</button>
+        </div>
+        <img src="./assets/martiniglass.png" alt="martini-glass" style="float: right; margin-right: 15px;">
+    </div>
+  </header>
+
+  <!-- <header>
     <h1 id="DrinkName"></h1>
     <button onclick="location.href = './index.html';" class="button" id="SFDButton">Search for Drinks</button>
     <button class="button" id="STF">Saved to Favorites</button>
     <p id="DRU">Drinks Я US</p>
-  </header>
+  </header> -->
 
   <main>
     <div class="tile is-ancestor">
-      <div class="tile is-vertical is-8" id="wide">
+      <div class="tile is-vertical is-8">
         <div class="tile">
           <div class="tile is-parent">
             <article class="tile is-child">
@@ -35,12 +49,12 @@
             </article>
           </div>
 
-          <div class="tile is-parent">
+          <div class="tile is-parent" id="nutrition-tile">
             <article class="tile is-child">
               <h2 class="title" id="nutrition-title">Calories:</h2>
-              <p id="calories-text" class="nutrition-text">123</p><br>
+              <p id="calories-text" class="nutrition-text"></p><br>
               <h2 class="title" id="nutrition-title">Sugars:</h2>
-              <p id="sugars-text" class="nutrition-text">123</p><br>
+              <p id="sugars-text" class="nutrition-text"></p><br>
             </article>
           </div>
         </div>
@@ -54,6 +68,8 @@
       </div>
     </div>
   </main>
+
+
 
   <script src="./assets/js/future.js"></script>
 

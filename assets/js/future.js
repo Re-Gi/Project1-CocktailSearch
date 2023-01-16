@@ -1,6 +1,4 @@
-// url must have drink id
-    // var drinkId = document.location.search.split('=').pop();
-var drinkId = "11007";
+var drinkId = localStorage.getItem("id");
 
 function getDrink() {
     var drinkQueryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
@@ -94,7 +92,7 @@ function printResults(drinkArr) {
         }
     }
     console.log(recipeData)
-    // getNutrition(recipeData);
+    getNutrition(recipeData);
 }
 
 function getNutrition(recipeData){
@@ -116,6 +114,13 @@ function getNutrition(recipeData){
     });
 }
 
-function displayNutrition(data) {}
+function displayNutrition(data) {
+
+    document.querySelector('#calories-text').textContent = data.calories;
+
+    var sugarData = data.totalNutrients.SUGAR;
+    document.querySelector('#sugars-text').textContent = sugarData.quantity.toFixed(1) + sugarData.unit;
+
+}
 
 getDrink();
