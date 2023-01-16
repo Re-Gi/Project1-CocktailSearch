@@ -2,138 +2,88 @@
 var searchFormEl = document.querySelector('#search-form');
 var resultContentEl = document.querySelector('#result-content');
 var resultTextEl = document.querySelector('#result-text');
+var resultsContainer = document.querySelector("#results");
 //const apiKEY:'7048428';
 
 function handleSearchFormSubmit(event) {
     event.preventDefault();
-    // if (!searchInputVal.value) {
-    //     console.log('no search term!');
-
-    //     return;
-    // }
     var searchInputVal = document.querySelector('#search-input').value;
-    // console.log(searchInputVal);
-    // var formatInputVal = document.querySelector('#drop-down').value;
-
+   
     getResults(searchInputVal);
 }
 
 function getResults(searchInputVal) {
     console.log(searchInputVal);
-  
-    var locQueryUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchInputVal;
+    var URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='  + searchInputVal;
+    var URL2 = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal;
+    let drinksname = fetch(URL);
+    let whattypeAlcohol = fetch(URL2);
 
-    fetch(locQueryUrl)
-        .then(function (response) {
-            if (!response.ok) {
-                console.log('not ok');
-                throw response.json();
-            }
+    // let drinksname = fetch(URL).then(resp =>resp.json());
+    // let whattypeAlcohol = fetch(URL2).then(resp => resp.json());
 
-            return response.json();
+    // const cocktailsData = async function () {
+    //     let results = await Promise.all([drinksname, whattypeAlcohol]);
+    //     console.log(results);
+
+    // }();
+
+    Promise.all([drinksname, whattypeAlcohol])
+    .then( files => {
+        files.forEach(file => {
+            process( file.json() )
         })
-        .then(function (locRes) {
-            // resultTextEl.textContent = locRes.search.searchInputVal;
-            console.log(locRes);
-            if (!locRes.drinks){
-                        console.log('No results found!');
-                        resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
-                    } else {
-                        resultContentEl.textContent = ' ';
-                        for (var i =0; locRes.drinks.strDrink; i++){
-        
-                        }
-                    }
-        
-
-            var drinkname = document.createElement('p');
-            drinkname.textContent = locRes.drinks[0].strDrink;
-            document.getElementById('result-content').append(drinkname);
-
-            var drinkpicture = document.createElement('img');
-            drinkpicture.setAttribute("src", locRes.drinks[0].strDrinkThumb);
-            document.getElementById('result-content').appendChild(drinkpicture);
-            
-        })
-
-        
-        // })
-        // .catch(function(error){
-            // printResults(locRes[i]);
-             //console.log()
-        // });
+    })
+    // .catch(err=> {
+    // });
+    let process = (prom) => {
+        prom.then(data =>{
+            cocktailsData = data.drinks === null ? []: data.drinks;
+            printResults(cocktailsData);
+            checkError(cocktailsData);
+        });
+    }
+}    
+//need to get a way to print some search.
+//And also made the images clickable. 
+function printResults(cocktails) {
+    resultContentEl.innerHTML = "";
+    for (const element of cocktails) {
+        var list = `<div id="${element.idDrink}" class="cocktail-card"><div id='drinkTitle'><p class="nameCocktail">${element.strDrink}<a><div class="imgWrapper"><img src="${element.strDrinkThumb}"></div></a>`;
+        resultContentEl.innerHTML += list;
+        console.log(cocktails);
+    }    
 }
 
-// function printResults(resultObj){
-//     console.log(resultObj);
+//error handling event 
+//fixed the error function to show: "NO Search Found!"
+//Will try to come back to this later to put a better Error Message. But moving to other stuff
+function checkError(){
+    setTimeout(() =>{
+        if(cocktailsData.length === 0){
+            console.log("Hey please enter a searchable name");
+            resultContentEl.textContent = "No Search Found!"
+        // resultContentEl.innerHTML = `<div class="wrapper"><div class="col-12 col-md-9 p-3 text-light" id="results" ><div class="results-wrapper" id="result-content"><p>NO Search Found!</p></div></div></div>`;
+        // resultsContainer.innerHTML = "";
+    } else {
+        printResults(cocktailsData);
+    }
 
-//     var resultCard = document.createElement('div');
-//     resultCard.classList.add('card', "bg-light", 'text-dark', "mb-3", 'p-3');
-
-
-// }
-
+    }, 500);
+    resultContentEl.innerHTML = "";
+    
+}
+//this will open the drink item to the next page. 
+function clickResults() {
+    document.querySelectorAll("#results").forEach((item) =>{
+        item.addEventListener("click", () => openDrink(item));
+    });
+}
+//takes us to the future html 
+function openDrink(element) {
+    localStorage.setItem("id", element.id);
+    window.open("./future.html");
+}
 
 //Event Listener
 document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     searchCocktail(searchInputVal);
-// }
-//     //This function is getting the DrinkName:
-//     function searchCocktail(event){
-//     event.preventDefault;
-
-
-//     var cocktailName = document.querySelector('#search-input').ariaValueMax;
-//     console.log(cocktailName);
-//     var formatAlcoholicVal = document.querySelector('#drop-down');
-
-
-
-//     let cocktailName = document.querySelector('.search-box');
-//     console.log(cocktailName);
-//     let drinkAPI = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`;
-
-//     fetch(drinkAPI)
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-
-//             var name = data.drinks[0].strDrink;
-//             var img = data.drinks[0].strDrinkThumb;
-//             var containAlcohol = data.drinks[0].strAlcoholic;
-//             //Need a location to be able to put this date for the name, pic, is drink alcoholic:
-//             var officialName = document.querySelector('h2');
-//             var cocktailPic = document.querySelector('img');
-//             var booleanAlcohol = document.querySelector('h2');
-
-//             officialName.innerText = `${name}`;
-//             cocktailPic.src = `${img}`;
-//             booleanAlcohol.innerText = `${containAlcohol}`;
-
-
-//             // Need to find a location to show information at this point. 
-
-//         })
-
-
-
