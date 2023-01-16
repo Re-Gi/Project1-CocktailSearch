@@ -16,17 +16,26 @@ function getResults(searchInputVal) {
     console.log(searchInputVal);
     var URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='  + searchInputVal;
     var URL2 = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + searchInputVal;
-
     let drinksname = fetch(URL);
     let whattypeAlcohol = fetch(URL2);
 
+    // let drinksname = fetch(URL).then(resp =>resp.json());
+    // let whattypeAlcohol = fetch(URL2).then(resp => resp.json());
+
+    // const cocktailsData = async function () {
+    //     let results = await Promise.all([drinksname, whattypeAlcohol]);
+    //     console.log(results);
+
+    // }();
+
     Promise.all([drinksname, whattypeAlcohol])
     .then( files => {
-        files.forEach(files => {
-            process( files.json() )
+        files.forEach(file => {
+            process( file.json() )
         })
     })
-    
+    // .catch(err=> {
+    // });
     let process = (prom) => {
         prom.then(data =>{
             cocktailsData = data.drinks === null ? []: data.drinks;
