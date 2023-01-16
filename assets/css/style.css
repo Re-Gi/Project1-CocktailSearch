@@ -1,6 +1,6 @@
 
 header {
-  height:200px;
+  height:auto;
 }
 
 
@@ -114,6 +114,9 @@ body {
 .cocktail-card:hover {
   color: gray;
 }
+.button:hover{
+  color: gray;
+}
 .hero.is-link {
   background-color: gray;
   text-align: center;
@@ -164,4 +167,10 @@ body {
    height: 60px;   /* Height of the footer */
    background: white;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.subtitle {
+  font-size: 2.5rem;
+}
+.container-future{
+  display: flex;
 }
