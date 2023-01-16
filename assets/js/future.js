@@ -94,7 +94,7 @@ function printResults(drinkArr) {
         }
     }
     console.log(recipeData)
-    // getNutrition(recipeData);
+    getNutrition(recipeData);
 }
 
 function getNutrition(recipeData){
@@ -116,6 +116,13 @@ function getNutrition(recipeData){
     });
 }
 
-function displayNutrition(data) {}
+function displayNutrition(data) {
+
+    document.querySelector('#calories-text').textContent = data.calories;
+
+    var sugarData = data.totalNutrients.SUGAR;
+    document.querySelector('#sugars-text').textContent = sugarData.quantity.toFixed(1) + sugarData.unit;
+
+}
 
 getDrink();
