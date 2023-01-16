@@ -1,7 +1,5 @@
 // url must have drink name
 // var query = document.location.search.split('=').pop();
-// url must have drink name
-// var query = document.location.search.split('=').pop();
 var resultContentEl = document.querySelector('.container-future');
 var loading = document.querySelector('.container-future');
 var URL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";

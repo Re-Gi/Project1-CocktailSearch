@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drinks Я US Content</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -12,19 +13,30 @@
 <body>
 
   <header>
-    <h1 id="DrinkName">Strawberry margarita</h1>
+    <section class="hero is-link">
+      <div class="hero-body" id="header"></div>
+      <img src="./assets/martiniglass.png" alt="martini-glass" style="float: left; margin-right: 15px;">
+      <img src="./assets/martiniglass.png" alt="martini-glass" style="float: right; margin-right: 15px;">
+      
+      <h1 class="title" id="title-hero">Drinks Я Us</h1>
+      <h2 class="subtitle">Find Your Cocktail Desire</h2>
+      
+    <!-- <h1 id="DrinkName">Strawberry margarita</h1> -->
     <button onclick="location.href = './index.html';" class="button" id="SFDButton">Search for Drinks</button>
     <button class="button" id="STF">Saved to Favorites</button>
-    <p id="DRU">Drinks Я US</p>
+    <!-- <p id="DRU">Drinks Я US</p> -->
+        </div>
+    </section>
   </header>
 
   <main>
+  <div class="container-future">
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-8" id="wide">
         <div class="tile">
           <div class="tile is-parent">
             <article class="tile is-child">
-              <img id="thumbnail" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview">
+              <!-- <img id="thumbnail" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview"> -->
             </article>
           </div>
 
@@ -39,12 +51,12 @@
             </article>
           </div>
 
-          <div class="tile is-parent">
+          <!-- <div class="tile is-parent">
             <article class="tile is-child">
               <p class="title" id="calories">Calories:</p>
               <p class="title" id="sugars">Sugars:</p>
             </article>
-          </div>
+          </div> -->
         </div>
 
         <div class="tile is-parent">
@@ -59,9 +71,15 @@
         </div>
       </div>
     </div>
+  </div> 
   </main>
+  <footer class="footer">
+    <div class="content has-text-centered">
+        <p><strong>Group 3</strong> Rebecca Girndt, Bennett Stokes, Jose Puente, and Christopher Zavala</p>
+    </div>
+</footer>
 
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/future.js"></script>
 
 </body>
 
