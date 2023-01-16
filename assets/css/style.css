@@ -8,6 +8,17 @@ ul {
   padding: 0 20px;
 }
 
+.nutrition-text {
+  display: inline-block;
+  font-size: 20px;
+}
+
+#nutrition-title {
+  display: inline;
+  margin-inline-end: 5px;
+  font-size: 1.5rem;
+}
+
 #SFDButton{
   position: absolute;
 top: 10px;

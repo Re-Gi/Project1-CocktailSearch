@@ -94,6 +94,28 @@ function printResults(drinkArr) {
         }
     }
     console.log(recipeData)
+    // getNutrition(recipeData);
 }
+
+function getNutrition(recipeData){
+
+    fetch('https://api.edamam.com/api/nutrition-details?app_id=e92b2fbc&app_key=ab699bffa43640de9198130a40b0528d', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(recipeData),
+    })
+    .then((response) => response.json())
+    .then((nutritionData) => {
+        console.log('Success:', nutritionData);
+        displayNutrition(nutritionData);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+function displayNutrition(data) {}
 
 getDrink();
