@@ -112,5 +112,56 @@ body {
 }
 
 .cocktail-card:hover {
-  color: hotpink;
+  color: gray;
+}
+.hero.is-link {
+  background-color: gray;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.notification.is-primary{
+  background-color: gray;
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.button.is-primary{
+  background-color: gray;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.button.is-primary:hover{
+  background-color: rgb(41, 40, 40);
+  
+}
+
+#title-hero{
+  font-size: 100px;
+}
+#search-input{
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: solid 3px gray ;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  padding-left: 15px;
+  text-align: center;
+}
+#search-form {
+  text-align: center;
+  
+}
+
+#martini glass{
+  align-items: left;
+}
+
+.footer{
+  position: bottom;
+   bottom: 200%;
+   width: 100%;
+   height: 60px;   /* Height of the footer */
+   background: white;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
