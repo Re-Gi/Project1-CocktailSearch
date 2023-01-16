@@ -1,6 +1,4 @@
-// url must have drink id
-    // var drinkId = document.location.search.split('=').pop();
-var drinkId = "11007";
+var drinkId = localStorage.getItem("id");
 
 function getDrink() {
     var drinkQueryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;

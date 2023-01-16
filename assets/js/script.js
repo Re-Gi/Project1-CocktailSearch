@@ -66,7 +66,7 @@ function checkError(){
         // resultContentEl.innerHTML = `<div class="wrapper"><div class="col-12 col-md-9 p-3 text-light" id="results" ><div class="results-wrapper" id="result-content"><p>NO Search Found!</p></div></div></div>`;
         // resultsContainer.innerHTML = "";
     } else {
-        // printResults(cocktailsData);
+        printResults(cocktailsData);
     }
 
     }, 500);
