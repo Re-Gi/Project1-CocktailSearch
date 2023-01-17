@@ -75,14 +75,14 @@ function checkError(){
 }
 //this will open the drink item to the next page. 
 function clickResults() {
-    document.querySelectorAll("#results").forEach((item) =>{
+    document.querySelectorAll(".cocktail-card").forEach((item) =>{
         item.addEventListener("click", () => openDrink(item));
     });
 }
 //takes us to the future html 
 function openDrink(element) {
     localStorage.setItem("id", element.id);
-    window.open("./future.html");
+    window.open("future.html");
 }
 
 //Event Listener
