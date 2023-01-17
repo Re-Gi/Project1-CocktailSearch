@@ -30,12 +30,11 @@ function getResults(searchInputVal) {
 
     Promise.all([drinksname, whattypeAlcohol])
     .then( files => {
-        files.forEach(file => {
-            process( file.json() )
+        files.forEach(files => {
+            process( files.json() )
         })
     })
-    // .catch(err=> {
-    // });
+   
     let process = (prom) => {
         prom.then(data =>{
             cocktailsData = data.drinks === null ? []: data.drinks;
@@ -53,6 +52,7 @@ function printResults(cocktails) {
         resultContentEl.innerHTML += list;
         // console.log(cocktails);
     }    
+    clickResults(); //This is basically using this function to go to the future.html page. 
 }
 
 //error handling event 
@@ -63,8 +63,6 @@ function checkError(){
         if(cocktailsData.length === 0){
             console.log("Hey please enter a searchable name");
             resultContentEl.textContent = "No Search Found!"
-        // resultContentEl.innerHTML = `<div class="wrapper"><div class="col-12 col-md-9 p-3 text-light" id="results" ><div class="results-wrapper" id="result-content"><p>NO Search Found!</p></div></div></div>`;
-        // resultsContainer.innerHTML = "";
     } else {
         printResults(cocktailsData);
     }
@@ -75,14 +73,15 @@ function checkError(){
 }
 //this will open the drink item to the next page. 
 function clickResults() {
-    document.querySelectorAll("#results").forEach((item) =>{
+    document.querySelectorAll(".cocktail-card").forEach((item) =>{
         item.addEventListener("click", () => openDrink(item));
     });
 }
 //takes us to the future html 
+//setting the drinkid from the api pull will help us in the 'future'
 function openDrink(element) {
     localStorage.setItem("id", element.id);
-    window.open("./future.html");
+    window.open('future.html');
 }
 
 //Event Listener
