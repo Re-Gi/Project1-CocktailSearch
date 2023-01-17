@@ -48,7 +48,7 @@ function getResults(searchInputVal) {
 function printResults(cocktails) {
     resultContentEl.innerHTML = "";
     for (const element of cocktails) {
-        var list = `<div id="${element.idDrink}" class="cocktail-card"><div id='drinkTitle'><p class="nameCocktail">${element.strDrink}<a><div class="imgWrapper"><img src="${element.strDrinkThumb}"></div></a>`;
+        var list = `<div id="${element.idDrink}" class="cocktail-card"><a><div id='drinkTitle'><p class="nameCocktail">${element.strDrink}<div class="imgWrapper"><img src="${element.strDrinkThumb}"></div>`;
         resultContentEl.innerHTML += list;
         // console.log(cocktails);
     }    
