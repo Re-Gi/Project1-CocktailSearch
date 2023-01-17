@@ -1,4 +1,5 @@
 var drinkId = localStorage.getItem("id");
+var data = localStorage.getItem("drinksearch");
 
 function getDrink() {
     var drinkQueryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
@@ -121,6 +122,11 @@ function displayNutrition(data) {
     var sugarData = data.totalNutrients.SUGAR;
     document.querySelector('#sugars-text').textContent = sugarData.quantity.toFixed(1) + sugarData.unit;
 
+}
+
+getData = ()=>{
+    data.JSON.parse(data);
+    
 }
 
 getDrink();
