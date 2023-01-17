@@ -92,7 +92,13 @@ function printResults(drinkArr) {
         }
     }
     console.log(recipeData)
+    if (localStorage.getItem(recipeData.title) !== null) {
+        var nutritionDataLocal = localStorage.getItem(recipeData.title);
+        console.log(JSON.parse(nutritionDataLocal));
+        displayNutrition(JSON.parse(nutritionDataLocal));
+    } else {
     getNutrition(recipeData);
+    }
 }
 
 function getNutrition(recipeData){
@@ -107,6 +113,7 @@ function getNutrition(recipeData){
     .then((response) => response.json())
     .then((nutritionData) => {
         console.log('Success:', nutritionData);
+        localStorage.setItem(recipeData.title, JSON.stringify(nutritionData))
         displayNutrition(nutritionData);
     })
     .catch((error) => {
