@@ -66,7 +66,7 @@ function checkError(){
             // resultContentEl.textContent = "No Search Found!"
             resultContentEl.innerHTML = `<body>
             <h2></h2>
-            <img src="./assets/nodrinks.jpeg" align="right">
+            <img src="./assets/images/nodrinks.jpeg" align="right">
          </body>`;
     } else {
         printResults(cocktailsData);
@@ -92,13 +92,13 @@ function openDrink(element) {
 //Event Listener
 document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
 
-searchFormEl.addEventListener('submit', (e) => {
-    e.preventDefault();
-    searchInputVal = e.target.querySelector('.form-input').value;
-    storeSearchResults(searchInputVal);
+// searchFormEl.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     searchInputVal = e.target.querySelector('.form-input').value;
+//     storeSearchResults(searchInputVal);
     
-    getResults(searchInputVal);
-});
-function storeSearchResults(data) {
-    localStorage.setItem('drinksearch', JSON.stringify(data))
-}
+//     getResults(searchInputVal);
+// });
+// function storeSearchResults(data) {
+//     localStorage.setItem('drinksearch', JSON.stringify(data))
+// }

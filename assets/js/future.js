@@ -1,5 +1,5 @@
 var drinkId = localStorage.getItem("id");
-var data = localStorage.getItem("drinksearch");
+// var data = localStorage.getItem("drinksearch");
 
 function getDrink() {
     var drinkQueryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
@@ -124,9 +124,9 @@ function displayNutrition(data) {
 
 }
 
-getData = ()=>{
-    data.JSON.parse(data);
+// getData = ()=>{
+//     data.JSON.parse(data);
     
-}
+// }
 
 getDrink();
