@@ -49,7 +49,7 @@ function getResults(searchInputVal) {
 function printResults(cocktails) {
     resultContentEl.innerHTML = "";
     for (const element of cocktails) {
-        var list = `<div id="${element.idDrink}" class="cocktail-card"><div id='drinkTitle'><p class="nameCocktail">${element.strDrink}<a><div class="imgWrapper"><img src="${element.strDrinkThumb}"></div></a>`;
+        var list = `<div id="${element.idDrink}" class="cocktail-card"><div id='drinkTitle'><h2 class="nameCocktail">${element.strDrink}<a><div class="imgWrapper"><img src="${element.strDrinkThumb}"></div></a>`;
         resultContentEl.innerHTML += list;
         // console.log(cocktails);
     }    

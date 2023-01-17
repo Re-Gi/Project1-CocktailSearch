@@ -61,9 +61,10 @@ ul {
   justify-content: space-around;
 
 }
-
+/* I needed to add this in the css page to fit the images of the cocktails pics to cover the entire card */
 img {
   width: 250px;
+  display: block;
 }
 /* .button  {
 background-color  : blue;
@@ -125,7 +126,7 @@ body {
 .cocktail-card img {
   transition: all 0.5s;
   width: 100%;
-  height: auto;
+  height: 20rem;
   max-height: auto;
   object-fit: cover;
   cursor: pointer;
