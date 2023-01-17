@@ -68,10 +68,9 @@ a {
   justify-content: space-around;
 
 }
-/* I needed to add this in the css page to fit the images of the cocktails pics to cover the entire card */
+
 img {
-  width: 250px;
-  display: block;
+  width: 20rem;
 }
 /* .button  {
 background-color  : blue;
@@ -109,7 +108,7 @@ body {
 
 .results-wrapper {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .imgWrapper {
@@ -226,10 +225,3 @@ body {
    background: white;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
