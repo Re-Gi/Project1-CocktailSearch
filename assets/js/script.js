@@ -3,7 +3,7 @@ var searchFormEl = document.querySelector('#search-form');
 var resultContentEl = document.querySelector('#result-content');
 var resultTextEl = document.querySelector('#result-text');
 var resultsContainer = document.querySelector("#results");
-//const apiKEY:'7048428';
+var searchInputVal = "";
 
 function handleSearchFormSubmit(event) {
     event.preventDefault();
@@ -30,8 +30,8 @@ function getResults(searchInputVal) {
 
     Promise.all([drinksname, whattypeAlcohol])
     .then( files => {
-        files.forEach(files => {
-            process( files.json() )
+        files.forEach(file => {
+            process( file.json() );
         })
     })
    
@@ -40,7 +40,8 @@ function getResults(searchInputVal) {
             cocktailsData = data.drinks === null ? []: data.drinks;
             printResults(cocktailsData);
             checkError(cocktailsData);
-        });
+            console.log(cocktailsData);
+        })
     }
 }    
 //need to get a way to print some search.
@@ -62,12 +63,16 @@ function checkError(){
     setTimeout(() =>{
         if(cocktailsData.length === 0){
             console.log("Hey please enter a searchable name");
-            resultContentEl.textContent = "No Search Found!"
+            // resultContentEl.textContent = "No Search Found!"
+            resultContentEl.innerHTML = `<body>
+            <h2></h2>
+            <img src="./assets/images/nodrinks.jpeg" align="right">
+         </body>`;
     } else {
         printResults(cocktailsData);
     }
 
-    }, 500);
+    },500);
     resultContentEl.innerHTML = "";
     
 }
@@ -86,3 +91,14 @@ function openDrink(element) {
 
 //Event Listener
 document.querySelector('#search-form').addEventListener('submit', handleSearchFormSubmit);
+
+// searchFormEl.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     searchInputVal = e.target.querySelector('.form-input').value;
+//     storeSearchResults(searchInputVal);
+    
+//     getResults(searchInputVal);
+// });
+// function storeSearchResults(data) {
+//     localStorage.setItem('drinksearch', JSON.stringify(data))
+// }
