@@ -3,13 +3,17 @@
   height:200px;
 } */
 main {
-  padding: 30px 10px;
+  padding: 25px 10px;
   font-size: 20px;
 }
 
 ul {
   list-style-type: disc;
   padding: 0 20px;
+}
+
+a {
+  color: gray;
 }
 
 .nutrition-text {
@@ -24,19 +28,22 @@ ul {
 }
 
 #SFDButton{
-  border: 1px dotted white;
-  background-color: transparent;
-  color: white;
-  font-size: 14px;
+  background-color: white;
+  color: rgb(41, 40, 40);
+  font-size: 16px;
+  border: 2px dotted white;
+  border-radius: 19px;
 }
 
 #SFDButton:hover {
-  border: none;
+  background-color: transparent;
 }
 
 #DrinkName{
   font-size: 3rem;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 #STF{
@@ -88,7 +95,7 @@ body {
 
 .nameCocktail {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 5vh;
+  font-size: 3vh;
   font-weight: bolder;
 }
 .wrapper {
@@ -112,7 +119,8 @@ body {
 }
 
 .cocktail-card {
-  width: 95%;
+  width: 80%;
+  height: min-content;
   background-color: white;
   box-sizing: border-box;
   margin: 25px;
@@ -124,11 +132,12 @@ body {
 
 .cocktail-card img {
   transition: all 0.5s;
-  width: 100%;
+  width: 96%;
   height: auto;
   max-height: auto;
   object-fit: cover;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .cocktail-card:hover img {
@@ -136,13 +145,20 @@ body {
 }
 
 .cocktail-card:hover {
-  color: gray;
+  color: rgb(31, 31, 31);
 }
+
 .hero.is-link {
-  background-color: gray;
+  height: 19rem;
+  background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2157&q=80');
+  background-repeat: no-repeat;
+  background-position: 50% 42%;
   text-align: center;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
+
 .notification.is-primary{
   background-color: gray;
   font-size: larger;
@@ -150,28 +166,43 @@ body {
   text-align: center;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 .button.is-primary{
   background-color: gray;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  padding: 0px 70px;
+  margin: 20px;
+  height: 34px;
+  border-radius: 20px;
 }
 .button.is-primary:hover{
   background-color: rgb(41, 40, 40);
   
 }
 
+.hero.is-link .subtitle {
+  font-size: 2.25rem;
+  color: rgb(29, 29, 29);
+}
+  
+
 #title-hero{
   font-size: 100px;
+  
 }
+
 #search-input{
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 37rem;
   height: 40px;
-  border: solid 3px gray ;
+  border: dashed 2px gray ;
   transition: all 0.5s ease;
-  border-radius: 5px;
+  border-radius: 19px;
   padding-left: 15px;
   text-align: center;
 }
+
 #search-form {
   text-align: center;
   
