@@ -88,6 +88,7 @@ a {
 
 .results-wrapper {
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -152,6 +153,11 @@ a {
 .nutrition-text {
   display: inline-block;
   font-size: 20px;
+}
+
+.title-perserving{
+  margin-left: 15px;
+  font-weight: 500;
 }
 
 #title-hero {
