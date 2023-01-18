@@ -108,6 +108,7 @@ body {
 
 .results-wrapper {
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
