@@ -123,12 +123,11 @@ function getNutrition(recipeData){
 }
 
 function displayNutrition(data) {
-
-    document.querySelector('#calories-text').textContent = data.calories;
-
+    var calperserving = data.calories/data.yield;
+    document.querySelector('#calories-text').textContent = calperserving.toFixed(1);
     var sugarData = data.totalNutrients.SUGAR;
-    document.querySelector('#sugars-text').textContent = sugarData.quantity.toFixed(1) + sugarData.unit;
-
+    document.querySelector('#sugars-text').textContent = (sugarData.quantity/data.yield).toFixed(1) + sugarData.unit;
+    document.querySelector('#servings-text').textContent = data.yield;
 }
 
 // getData = ()=>{

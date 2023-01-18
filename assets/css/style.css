@@ -225,3 +225,7 @@ body {
    background: white;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.title-perserving{
+  margin-left: 15px;
+  font-weight: 500;
+}
