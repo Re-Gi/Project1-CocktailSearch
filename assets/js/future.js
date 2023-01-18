@@ -25,7 +25,6 @@ function printResults(drinkArr) {
     document.querySelector('#DrinkName').textContent = drinkArr.strDrink;
 
     var drinkImg = drinkArr.strDrinkThumb;
-    // var drinkIng = drinkArr.strMeasure + i + " " drinkArr.strIngredient + i;
     var drinkIns = drinkArr.strInstructions;
 
     document.querySelector('#thumbnail').setAttribute('src', drinkImg);
@@ -73,7 +72,6 @@ function printResults(drinkArr) {
     };
 
     for (var i=0; i <= 15; i++) {
-        // var measureVal = 'strMeasure' + i;
         if (ingredientsArr[i] !== null && measureArr[i] !== null){
 
             recipeData.ingr.push(measureArr[i] + ' ' + ingredientsArr[i])
