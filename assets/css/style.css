@@ -1,10 +1,15 @@
+body {
+  height: auto;
+  margin: 0 auto;
+}
 
-/* header {
-  height:200px;
-} */
 main {
   padding: 25px 10px;
   font-size: 20px;
+}
+
+img {
+  width: 20rem;
 }
 
 ul {
@@ -16,88 +21,59 @@ a {
   color: gray;
 }
 
-.nutrition-text {
-  display: inline-block;
-  font-size: 20px;
-}
-
-#nutrition-title {
-  display: inline;
-  margin-inline-end: 5px;
-  font-size: 1.5rem;
-}
-
-#SFDButton{
-  background-color: white;
-  color: rgb(41, 40, 40);
-  font-size: 16px;
-  border: 2px dotted white;
-  border-radius: 19px;
-}
-
-#SFDButton:hover {
-  background-color: transparent;
-}
-
-#DrinkName{
-  font-size: 3rem;
-  margin-top: 0px;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-#STF{
-  position: absolute;
-  top: 10px;
-  right: 70px;
-}
-
-#DRU{
-  position: absolute;
-  top: 60px;
-  right: 0;
-  left:0;
-  text-align: center;
-}
-
-.tile.is-ancestor {
-  justify-content: center;
-}
-
-.tile {
-  justify-content: space-around;
-
-}
-
-img {
-  width: 20rem;
-}
-/* .button  {
-background-color  : blue;
-} */
-
-/* first page stuff to see if I can get the results alignment better-Chris */
-/* just to put a grid on the results */
-body {
-  height: auto;
-  margin: 0 auto;
-}
-
 .hero-body {
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
 
-.col-12 {
-  background-color: white;
+.hero.is-link {
+  height: 19rem;
+  background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2157&q=80');
+  background-repeat: no-repeat;
+  background-position: 50% 42%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
+.hero.is-link .subtitle {
+  font-size: 2.25rem;
+  color: rgb(29, 29, 29);
+}
+
+/* 1st page classes */
+
 .nameCocktail {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 3vh;
   font-weight: bolder;
 }
+
+.notification.is-primary {
+  background-color: gray;
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button.is-primary {
+  background-color: gray;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  padding: 0px 70px;
+  margin: 20px;
+  height: 34px;
+  border-radius: 20px;
+}
+
+.button.is-primary:hover {
+  background-color: rgb(41, 40, 40);
+
+}
+
 .wrapper {
   height: auto;
   max-width: 1300px;
@@ -106,8 +82,13 @@ body {
   flex-direction: column;
 }
 
+.col-12 {
+  background-color: white;
+}
+
 .results-wrapper {
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -130,6 +111,10 @@ body {
   border-radius: 10px;
 }
 
+.cocktail-card:hover {
+  color: rgb(31, 31, 31);
+}
+
 .cocktail-card img {
   transition: all 0.5s;
   width: 96%;
@@ -144,59 +129,48 @@ body {
   transform: scale(1.1);
 }
 
-.cocktail-card:hover {
-  color: rgb(31, 31, 31);
+.footer {
+  position: bottom;
+  bottom: 200%;
+  width: 100%;
+  height: 60px;
+  /* Height of the footer */
+  background: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.hero.is-link {
-  height: 19rem;
-  background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2157&q=80');
-  background-repeat: no-repeat;
-  background-position: 50% 42%;
-  text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+/* 2nd page classes */
+
+.tile.is-ancestor {
+  justify-content: center;
 }
 
-.notification.is-primary{
-  background-color: gray;
-  font-size: larger;
-  font-weight: bolder;
-  text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.tile {
+  justify-content: space-around;
+
 }
 
-.button.is-primary{
-  background-color: gray;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 18px;
-  padding: 0px 70px;
-  margin: 20px;
-  height: 34px;
-  border-radius: 20px;
-}
-.button.is-primary:hover{
-  background-color: rgb(41, 40, 40);
-  
+.nutrition-text {
+  display: inline-block;
+  font-size: 20px;
 }
 
-.hero.is-link .subtitle {
-  font-size: 2.25rem;
-  color: rgb(29, 29, 29);
+.title-perserving{
+  margin-left: 15px;
+  font-weight: 500;
 }
-  
 
-#title-hero{
+#title-hero {
   font-size: 100px;
-  
 }
 
-#search-input{
+/* 1st page IDs */
+
+#search-input {
   display: inline-block;
   width: 37rem;
   height: 40px;
-  border: dashed 2px gray ;
+  border: dashed 2px gray;
   transition: all 0.5s ease;
   border-radius: 19px;
   padding-left: 15px;
@@ -205,11 +179,27 @@ body {
 
 #search-form {
   text-align: center;
-  
 }
 
-#martini glass{
-  align-items: left;
+/* 2nd page IDs */
+
+#DrinkName {
+  font-size: 3rem;
+  margin-top: 0px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#SFDButton {
+  background-color: white;
+  color: rgb(41, 40, 40);
+  font-size: 16px;
+  border: 2px dotted white;
+  border-radius: 19px;
+}
+
+#SFDButton:hover {
+  background-color: transparent;
 }
 
 #nutrition-tile {
@@ -217,20 +207,8 @@ body {
   flex-shrink: .5;
 }
 
-.footer{
-  position: bottom;
-   bottom: 200%;
-   width: 100%;
-   height: 60px;   /* Height of the footer */
-   background: white;
-   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.title-perserving{
-  margin-left: 15px;
-  font-weight: 500;
-}
-.results-wrapper {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+#nutrition-title {
+  display: inline;
+  margin-inline-end: 5px;
+  font-size: 1.5rem;
 }

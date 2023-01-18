@@ -1,9 +1,5 @@
 var drinkId = localStorage.getItem("id");
 // var data = localStorage.getItem("drinksearch");
-//5fc87df87f3df570f45d7a2860fe4ed5	
-//d7f405a4
-
-
 
 function getDrink() {
     var drinkQueryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
@@ -29,7 +25,6 @@ function printResults(drinkArr) {
     document.querySelector('#DrinkName').textContent = drinkArr.strDrink;
 
     var drinkImg = drinkArr.strDrinkThumb;
-    // var drinkIng = drinkArr.strMeasure + i + " " drinkArr.strIngredient + i;
     var drinkIns = drinkArr.strInstructions;
 
     document.querySelector('#thumbnail').setAttribute('src', drinkImg);
@@ -77,7 +72,6 @@ function printResults(drinkArr) {
     };
 
     for (var i=0; i <= 15; i++) {
-        // var measureVal = 'strMeasure' + i;
         if (ingredientsArr[i] !== null && measureArr[i] !== null){
 
             recipeData.ingr.push(measureArr[i] + ' ' + ingredientsArr[i])
@@ -140,3 +134,6 @@ function displayNutrition(data) {
 // }
 
 getDrink();
+
+//backup edamam key: 5fc87df87f3df570f45d7a2860fe4ed5	
+    //id: d7f405a4
